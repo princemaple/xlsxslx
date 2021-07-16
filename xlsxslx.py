@@ -16,7 +16,7 @@ def convert(excel, path: Path):
     wb.Close()
 
 
-def main(paths, glob='*.xls'):
+def convert_all(paths, glob='*.xls'):
     excel = win32.gencache.EnsureDispatch('Excel.Application')
 
     for path in paths:
@@ -30,7 +30,7 @@ def main(paths, glob='*.xls'):
     excel.Application.Quit()  # type: ignore
 
 
-if __name__ == '__main__':
+def script():
     import PySimpleGUI as sg
 
     window = sg.Window(
@@ -47,11 +47,17 @@ if __name__ == '__main__':
     glob = ''
     if command == 1:
         path = sg.popup_get_file(
-            'XLS files', 'Select files', file_types=(('XLS', '*.xls'),), multiple_files=True
+            'XLS files',
+            'Select files',
+            file_types=(('XLS', '*.xls'),),
+            multiple_files=True,
         )
     elif command == 2:
         path = sg.popup_get_file(
-            'XLSX files', 'Select files', file_types=(('XLSX', '*.xlsx'),), multiple_files=True
+            'XLSX files',
+            'Select files',
+            file_types=(('XLSX', '*.xlsx'),),
+            multiple_files=True,
         )
     elif command == 11:
         path, glob = sg.popup_get_folder('XLS folder', 'Select foler'), '*.xls'
@@ -61,4 +67,8 @@ if __name__ == '__main__':
         raise Exception('Unknown')
 
     if path:
-        main(path.split(';'), glob)
+        convert_all(path.split(';'), glob)
+
+
+if __name__ == '__main__':
+    script()
