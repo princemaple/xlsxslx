@@ -17,7 +17,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "6288f1db35b5cd6cf8e5214444b006771656421411c08eb4abeca68710d5d9be"
+content-hash = "a28f9aec86b2f5fe8bd4b2910bc69f9490a106bbf83890af9eea1bbd98620cc9"
 
 [metadata.files]
 pysimplegui = [

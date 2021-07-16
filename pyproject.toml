@@ -12,6 +12,9 @@ pywin32 = "^301"
 
 [tool.poetry.dev-dependencies]
 
+[tool.poetry.scripts]
+xlsxslx = "xlsxslx.xlsxslx:script"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
