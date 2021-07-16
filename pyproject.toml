@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "xlsxslx"
+version = "0.1.0"
+description = "Batch conversion from XLS to XLSX or the other way around."
+authors = ["Po Chen <chenpaul914@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pysimplegui = "^4.43.0"
+pywin32 = "^301"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
